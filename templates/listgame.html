@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}所有遊戲列表{% endblock %}
+{% block contain %} 
+<h2>列出所有遊戲</h2>
+<hr>
+<table class="table table-strip">
+    <tr><td>遊戲名稱</td><td>遊戲id</td><td>創建時間</td><td>管理</td></tr>
+    {% for item in games %} 
+    <tr>
+        <td><a href="/info/{{item.id}}/">{{item.name}}</a></td>
+        <td>{{item.gid}}</td>
+        <td>{{item.timestamp}}</td>
+        <td><a class="btn btn-outline-warning" href="/delete/{{item.id}}/">刪除</a></td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

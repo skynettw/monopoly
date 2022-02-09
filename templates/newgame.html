@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block title %}建立新遊戲 {% endblock %}
+{% block contain %}
+<h2>建立新遊戲</h2>
+<hr>
+<form action="/new/" method="POST">
+    {% csrf_token %}
+<table class="table">
+    <tr>
+        <td width="150">遊戲名稱</td><td><input name='name' value='歡樂大富翁' size=40></td>
+    </tr>
+    <tr>
+        <td width="150">玩家1姓名：</td><td><input name='player1' value='孫小美' size=20></td>
+    </tr>
+    <tr>
+        <td width="150">玩家2姓名：</td><td><input name='player2'  value='阿土伯' size=20></td>
+    </tr>
+    <tr>
+        <td width="150">玩家3姓名：</td><td><input name='player3'  value='錢夫人' size=20></td>
+    </tr>
+    <tr>
+        <td width="150">玩家4姓名：</td><td><input name='player4'  value='王大明' size=20></td>
+    </tr>
+    <tr>
+        <td width="150">初始金額：</td><td><input name='money' value=5000 size=20></td>
+    </tr>
+
+    <tr>
+        <td colspan="2"><input type=submit value="建立"></td>
+    </tr>
+</table>
+</form>
+{% endblock %}

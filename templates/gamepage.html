@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %} {{player.name}}的帳戶{% endblock %}
+{% block contain %}
+<h2>{{game.name}}--{{player.name}}的帳戶</h2>
+<h3>現金：{{player.money}}元</h3>
+<hr>
+<form action="/access/{{game.id}}/{{player.id}}/" method="POST">
+    {% csrf_token %}
+    型態：
+    <select name="etype">
+        <option value="0">收入</option>
+        <option value="1">支出</option>
+    </select><br>
+    對象：
+    <select name="target">
+        <option value="0">銀行</option>
+        {% for p in players %}
+            <option value={{p.id}}>{{p.name}}</option>
+        {% endfor %}
+    </select><br>
+    金額：<input name="amount" size="10" value="2000">元<br>
+    <input type="submit" value="執行">
+</form>
+{% endblock %}

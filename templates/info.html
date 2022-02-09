@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}{{game.name}}{% endblock %}
+{% block contain %}
+<h2>{{game.name}}</h2>
+<hr>
+我要以
+{% for p in players %}
+    <a class="btn btn-primary" href="/join/{{game.id}}/{{p.id}}/">{{p.name}}</a>
+{% endfor %}
+的身份加入遊戲
+{% endblock %}
