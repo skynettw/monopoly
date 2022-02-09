@@ -18,7 +18,8 @@
             <option value={{p.id}}>{{p.name}}</option>
         {% endfor %}
     </select><br>
-    金額：<input name="amount" size="10" value="2000">元<br>
+    金額：<input name="amount" size="10" value="2000">元<br><br>
     <input type="submit" value="執行">
-</form>
+</form><br>
+<button onClick="window.location.reload();">重整頁面</button>
 {% endblock %}

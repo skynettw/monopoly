@@ -3,9 +3,9 @@
 {% block contain %}
 <h2>{{game.name}}</h2>
 <hr>
-我要以
+我要以<br>
 {% for p in players %}
-    <a class="btn btn-primary" href="/join/{{game.id}}/{{p.id}}/">{{p.name}}</a>
+    <a class="btn btn-primary" href="/join/{{game.id}}/{{p.id}}/">{{p.name}}</a><br><br>
 {% endfor %}
 的身份加入遊戲
 {% endblock %}
